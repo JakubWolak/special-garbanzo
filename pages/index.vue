@@ -1,16 +1,21 @@
 <template>
   <div class="main">
-    <MatrixAnimation />
+    <WordAnimation
+      class="main__word-matrix"
+      :word="'Grzegorz Brzęczyszczykiewicz'"
+    />
+    <MatrixAnimation class="main__matrix" />
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import MatrixAnimation from '~/components/MatrixAnimation'
+import WordAnimation from '~/components/WordAnimation'
 
 export default Vue.extend({
   name: 'IndexPage',
-  components: { MatrixAnimation },
+  components: { MatrixAnimation, WordAnimation },
   data() {
     return {
       streams: [],
@@ -28,5 +33,15 @@ export default Vue.extend({
   font-family: Roboto Mono;
   width: 100vw;
   height: 100vh;
+
+  position: relative;
+
+  &__word-matrix {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
 }
 </style>
