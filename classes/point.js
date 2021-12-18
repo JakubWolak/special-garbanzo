@@ -11,7 +11,7 @@ export class Point {
   animate() {
     this.y += this.speed
 
-    if (Math.random() < 0.4) {
+    if (Math.random() < 0.2) {
       const rand = Math.random().toString(36)
       this.text = rand[Math.floor(rand.length * Math.random())]
       this.text = this.randomChar()

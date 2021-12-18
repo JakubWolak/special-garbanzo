@@ -1,10 +1,11 @@
 <template>
   <div class="main">
-    <WordAnimation
-      class="main__word-matrix"
-      :word="'Grzegorz Brzęczyszczykiewicz'"
-    />
-    <MatrixAnimation class="main__matrix" />
+    <WordAnimation v-once class="main__word-matrix" :word="'Jakub Wolak'" />
+    <MatrixAnimation v-once class="main__matrix" />
+    <div class="text">
+      <div class="collapse" />
+      <p>Fullstack JS Developer</p>
+    </div>
   </div>
 </template>
 
@@ -42,6 +43,61 @@ export default Vue.extend({
     left: 50%;
 
     transform: translate(-50%, -50%);
+  }
+}
+
+.text {
+  position: absolute;
+  width: max-content;
+
+  background: transparent;
+
+  > p {
+    color: white;
+    margin: 0;
+  }
+
+  > .collapse {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgb(229, 92, 92);
+
+    animation: ease-out disappear 1s forwards;
+    animation-delay: 3.6s;
+
+    @keyframes disappear {
+      0% {
+        width: 100%;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        width: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+  top: 40vh;
+  left: -100%;
+
+  transform: translate(-50%, -50%);
+  animation: ease-out appear 1s forwards;
+  animation-delay: 2.2s;
+
+  @keyframes appear {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 50vw;
+    }
   }
 }
 </style>

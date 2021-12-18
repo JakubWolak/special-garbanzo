@@ -1,15 +1,22 @@
 <template>
   <div class="animation">
-    <div class="animation__item">
-      <span
-        v-for="character in matrix.characters"
-        :key="character.id + character.character"
-        class="animation__item__character"
-        :style="{ opacity: character.opacity }"
+    <svg class="animation__item">
+      <g
+        v-for="letter in matrix.characters"
+        :key="letter.id"
+        class="animation__item__word"
       >
-        {{ character.character }}
-      </span>
-    </div>
+        <text
+          :x="leftMargin + letter.x * matrix.characters.indexOf(letter)"
+          :y="letter.y"
+          :fill-opacity="letter.opacity"
+          text-anchor="middle"
+          class="animation__item__character"
+        >
+          {{ letter.character }}
+        </text>
+      </g>
+    </svg>
   </div>
 </template>
 
@@ -29,41 +36,64 @@ export default Vue.extend({
   data() {
     return {
       matrix: [],
+      leftMargin: 0,
+
+      intervalId: null,
     }
   },
   mounted() {
-    this.matrix = new TextMatrix({
-      text: this.word,
-    })
+    setTimeout(() => {
+      this.initMatrix()
+
+      this.intervalId = setInterval(() => this.animation(), 40)
+      window.onresize = () => this.initMatrix()
+    }, 2500)
+  },
+  methods: {
+    initMatrix() {
+      this.matrix = new TextMatrix({
+        text: this.word,
+        screenHeight: window.innerHeight,
+      })
+
+      this.leftMargin =
+        window.innerWidth / 2 -
+        (this.matrix.characters[0].x * (this.matrix.characters.length - 0.8)) /
+          2
+    },
+    animation() {
+      this.matrix.animate()
+    },
   },
 })
 </script>
 
 <style lang="scss" scoped>
 .animation {
-  width: max-content;
-  height: max-content;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   place-content: center;
 
   &__item {
-    width: max-content;
-    height: min-content;
+    width: 100%;
+    height: 100%;
     max-width: 100%;
 
     display: flex;
+    place-items: center;
     flex-wrap: nowrap;
 
+    &__word {
+      width: max-content;
+      height: max-content;
+    }
+
     &__character {
-      color: rgb(229, 92, 92);
-      font-size: 20px;
-      font-weight: bold;
-
-      padding: 5px;
-
-      display: flex;
-      place-content: center;
+      fill: rgb(229, 92, 92);
+      font-size: 28px;
+      font-weight: lighter;
     }
   }
 }

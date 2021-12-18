@@ -1,9 +1,23 @@
 export class Character {
-  constructor({ id, allowed, character, changes }) {
+  constructor({
+    id,
+    allowed,
+    character,
+    changes,
+    x,
+    y = 0,
+    speed,
+    screenHeight,
+  }) {
     this.id = id
+    this.x = x
+    this.y = y
     this.allowedCharacters = allowed.split('')
     this.destinationCharacter = character
     this.character = character
+    this.destination = screenHeight / 3
+
+    this.speed = speed
 
     this.changes = changes
     this.setDuration()
@@ -14,6 +28,7 @@ export class Character {
 
   animate() {
     this.timeout()
+    this.move()
   }
 
   setDuration() {
@@ -22,6 +37,14 @@ export class Character {
 
   setOpacity() {
     this.opacity = this.randomNumber(5, 10) / 10
+  }
+
+  move() {
+    this.y += this.speed
+
+    if (this.y > this.destination) {
+      this.y = this.destination
+    }
   }
 
   timeout() {

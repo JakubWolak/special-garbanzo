@@ -27,7 +27,6 @@ export default Vue.extend({
   data() {
     return {
       streams: [],
-      tick: 0,
       intervalId: null,
 
       symbolSize: 18,
