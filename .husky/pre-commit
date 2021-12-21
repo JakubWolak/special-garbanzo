@@ -3,4 +3,5 @@
 
 npm run lint
 npm run lintfix
+git add .
 npx --no-install lint-staged
