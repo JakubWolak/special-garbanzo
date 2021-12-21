@@ -6,17 +6,20 @@
       <div class="collapse" />
       <p>Fullstack JS Developer</p>
     </div>
+
+    <ArrowButton class="main__button" />
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import MatrixAnimation from '~/components/MatrixAnimation'
-import WordAnimation from '~/components/WordAnimation'
+import MatrixAnimation from '~/components/main/MatrixAnimation'
+import WordAnimation from '~/components/main/WordAnimation'
+import ArrowButton from '~/components/main/ArrowButton'
 
 export default Vue.extend({
   name: 'IndexPage',
-  components: { MatrixAnimation, WordAnimation },
+  components: { ArrowButton, MatrixAnimation, WordAnimation },
   data() {
     return {
       streams: [],
@@ -43,6 +46,15 @@ export default Vue.extend({
     left: 50%;
 
     transform: translate(-50%, -50%);
+  }
+
+  &__button {
+    position: absolute;
+
+    top: 75vh;
+    left: 50vw;
+
+    transform: translateX(-50%);
   }
 }
 

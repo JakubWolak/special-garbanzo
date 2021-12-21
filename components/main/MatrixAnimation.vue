@@ -35,7 +35,10 @@ export default Vue.extend({
   },
   mounted() {
     this.initStreams()
-    this.intervalId = setInterval(() => this.animation(), 40)
+    this.intervalId = setInterval(
+      () => this.animation(),
+      window.innerWidth > 1200 ? 12 : 40
+    )
 
     window.onresize = () => this.initStreams()
   },
@@ -46,7 +49,7 @@ export default Vue.extend({
     initStreams() {
       this.streams = []
 
-      for (let x = 1; x < window.innerWidth / this.symbolSize - 1; x++) {
+      for (let x = 0; x < window.innerWidth / this.symbolSize - 1; x++) {
         const stream = new Stream({
           fadeInterval: this.fadeInterval,
           symbolSize: this.symbolSize,
