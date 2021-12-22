@@ -103,8 +103,8 @@ export default Vue.extend({
 
     this.ctx.font = "16px 'Space Mono', monospace"
     // this.ctx.font = '18px Roboto Mono, monospace'
-    this.ctx.fillText('Jakub', 9, 25)
-    this.ctx.fillText('Wolak', 16, 47)
+    this.ctx.fillText('Jakub', 14, 25)
+    this.ctx.fillText('Wolak', 21, 47)
 
     this.textCoordinates = this.ctx.getImageData(0, 0, 76, 48)
 

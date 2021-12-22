@@ -12,6 +12,7 @@
 
       <nav class="header__navigation">
         <div class="header__navigation__button">About me</div>
+        <div class="header__navigation__button">Skills</div>
         <div class="header__navigation__button">Projects</div>
         <CommonSmallPrimaryButton>Contact</CommonSmallPrimaryButton>
       </nav>
