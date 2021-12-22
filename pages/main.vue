@@ -7,25 +7,21 @@
           something more?
         </h4>
         <div class="about__buttons">
-          <SecondaryButton>Projects</SecondaryButton>
-          <PrimaryButton>About me</PrimaryButton>
+          <CommonSecondaryButton>Projects</CommonSecondaryButton>
+          <CommonPrimaryButton>About me</CommonPrimaryButton>
         </div>
       </div>
     </div>
     <div class="main__logo">
-      <AnimatedLogo />
+      <MainAnimatedLogo />
     </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import AnimatedLogo from '@/components/main/AnimatedLogo'
-import PrimaryButton from '@/components/common/PrimaryButton'
-import SecondaryButton from '@/components/common/SecondaryButton'
 
 export default Vue.extend({
   name: 'MainPage',
-  components: { SecondaryButton, PrimaryButton, AnimatedLogo },
 })
 </script>

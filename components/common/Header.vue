@@ -8,6 +8,13 @@
           class="header__logo__img"
         />
       </figure>
+
+      <nav>
+        <div>About me</div>
+        <div>Projects</div>
+        <CommonSmallPrimaryButton>Contact form</CommonSmallPrimaryButton>
+        <div></div>
+      </nav>
     </div>
   </header>
 </template>
