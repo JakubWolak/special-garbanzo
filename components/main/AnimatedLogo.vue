@@ -75,7 +75,7 @@ export default Vue.extend({
         radius: 120,
       },
 
-      maxDistance: 25,
+      maxDistance: 20,
 
       canvas: null,
       ctx: null,
@@ -101,9 +101,10 @@ export default Vue.extend({
       this.mouse.active = false
     }
 
-    this.ctx.font = '18px Roboto Mono, monospace'
-    this.ctx.fillText('Jakub', 7, 25)
-    this.ctx.fillText('Wolak', 14, 47)
+    this.ctx.font = "16px 'Space Mono', monospace"
+    // this.ctx.font = '18px Roboto Mono, monospace'
+    this.ctx.fillText('Jakub', 9, 25)
+    this.ctx.fillText('Wolak', 16, 47)
 
     this.textCoordinates = this.ctx.getImageData(0, 0, 76, 48)
 
@@ -124,11 +125,11 @@ export default Vue.extend({
               y * 4 * this.textCoordinates.width + x * 4 + 3
             ] > 128
           ) {
-            const randX = Math.floor((Math.random() * 10 - 5) / 1.2)
-            const randY = Math.floor((Math.random() * 10 - 5) / 1.2)
+            const randX = Math.floor((Math.random() * 10 - 5) / 2)
+            const randY = Math.floor((Math.random() * 10 - 5) / 2)
 
-            const positionX = x * 11 + randX
-            const positionY = y * 11 + randY
+            const positionX = x * 12 + randX
+            const positionY = y * 12 + randY
 
             this.particles.push(new Particle(positionX, positionY))
           }

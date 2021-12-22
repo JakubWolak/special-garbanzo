@@ -1,0 +1,21 @@
+@import 'variables';
+
+.secondary-button {
+  display: inline-block;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  padding: 24px 34px 22px 34px;
+  border: 2px solid $border;
+
+  transition: all 0.2s ease-out;
+
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: lighter;
+
+  &:hover {
+    background-color: $secondary;
+  }
+}

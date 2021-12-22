@@ -6,6 +6,10 @@
           Hi, I'm fullstack JS developer based in Poland.<br />Want to know
           something more?
         </h4>
+        <div class="about__buttons">
+          <SecondaryButton>Projects</SecondaryButton>
+          <PrimaryButton>About me</PrimaryButton>
+        </div>
       </div>
     </div>
     <div class="main__logo">
@@ -17,9 +21,11 @@
 <script>
 import Vue from 'vue'
 import AnimatedLogo from '@/components/main/AnimatedLogo'
+import PrimaryButton from '@/components/common/PrimaryButton'
+import SecondaryButton from '@/components/common/SecondaryButton'
 
 export default Vue.extend({
   name: 'MainPage',
-  components: { AnimatedLogo },
+  components: { SecondaryButton, PrimaryButton, AnimatedLogo },
 })
 </script>

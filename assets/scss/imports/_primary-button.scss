@@ -1,0 +1,50 @@
+@import 'variables';
+
+.primary-button {
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+
+  cursor: pointer;
+  line-height: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 100%;
+    height: 100%;
+
+    background-color: $primary;
+    display: block;
+
+    transition: all 0.15s ease-out;
+  }
+
+  &:hover {
+    &::before {
+      top: 0;
+      left: 0;
+      background-color: $secondary;
+    }
+  }
+
+  &__top {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    padding: 24px 34px 22px 34px;
+    border: 2px solid $border;
+  }
+
+  &__label {
+    font-weight: lighter;
+    font-size: 16px;
+    letter-spacing: 2px;
+
+    text-align: center;
+    transition: all 0.15s ease-out;
+  }
+}
