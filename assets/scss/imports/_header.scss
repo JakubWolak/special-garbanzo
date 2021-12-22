@@ -15,6 +15,11 @@
     height: max-content;
     width: 100%;
     max-width: $max-content-width;
+
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: space-between;
   }
 
   &__logo {
@@ -26,6 +31,43 @@
     &__img {
       width: 100%;
       height: 100%;
+    }
+  }
+
+  &__navigation {
+    width: max-content;
+    height: min-content;
+
+    justify-self: flex-end;
+
+    display: flex;
+    align-items: center;
+    column-gap: 35px;
+
+    &__button {
+      display: inline-block;
+      position: relative;
+      padding: 0 1px;
+
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: $border;
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
     }
   }
 }
