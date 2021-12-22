@@ -9,7 +9,9 @@
   display: flex;
   justify-content: center;
 
-  background-color: $background;
+  //background-color: $background;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #ffffff, #cccccc);
+  background-size: 300% 300%;
 
   font-family: Roboto Mono, monospace;
 }

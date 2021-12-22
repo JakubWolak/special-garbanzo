@@ -31,7 +31,7 @@
     &::before {
       top: 0;
       left: 0;
-      background-color: $secondary;
+      //background-color: $secondary;
     }
   }
 
@@ -39,6 +39,8 @@
     position: relative;
     top: 0;
     left: 0;
+
+    height: max-content;
 
     padding: 24px 34px 22px 34px;
     border: 2px solid $border;
