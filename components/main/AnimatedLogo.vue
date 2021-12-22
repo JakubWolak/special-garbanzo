@@ -104,7 +104,7 @@ export default Vue.extend({
     this.ctx.font = "16px 'Space Mono', monospace"
     // this.ctx.font = '18px Roboto Mono, monospace'
     this.ctx.fillText('Jakub', 14, 25)
-    this.ctx.fillText('Wolak', 21, 47)
+    this.ctx.fillText('Wolak', 21, 43)
 
     this.textCoordinates = this.ctx.getImageData(0, 0, 76, 48)
 
@@ -158,7 +158,7 @@ export default Vue.extend({
           if (distance < this.maxDistance) {
             this.ctx.strokeStyle = 'black'
             this.ctx.lineWidth =
-              2 * ((this.maxDistance - distance) / this.maxDistance)
+              3 * ((this.maxDistance - distance) / this.maxDistance)
             this.ctx.opacity = (this.maxDistance - distance) / this.maxDistance
             this.ctx.beginPath()
             this.ctx.moveTo(a.x, a.y)
