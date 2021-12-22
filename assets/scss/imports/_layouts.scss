@@ -1,0 +1,15 @@
+@import 'common';
+
+.layout-default {
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+
+  background-color: $background;
+
+  font-family: Roboto Mono, monospace;
+}

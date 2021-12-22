@@ -101,7 +101,7 @@ export default Vue.extend({
       this.mouse.active = false
     }
 
-    this.ctx.font = '20.8px Roboto Mono, monospace'
+    this.ctx.font = '18px Roboto Mono, monospace'
     this.ctx.fillText('Jakub', 7, 25)
     this.ctx.fillText('Wolak', 14, 47)
 
@@ -127,8 +127,8 @@ export default Vue.extend({
             const randX = Math.floor((Math.random() * 10 - 5) / 1.2)
             const randY = Math.floor((Math.random() * 10 - 5) / 1.2)
 
-            const positionX = x * 10 + randX
-            const positionY = y * 10 + randY
+            const positionX = x * 11 + randX
+            const positionY = y * 11 + randY
 
             this.particles.push(new Particle(positionX, positionY))
           }
